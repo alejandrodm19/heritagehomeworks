@@ -1,76 +1,65 @@
 /* ==========================================================================
-   HERITAGE HOMEWORKS — Main Stylesheet
-   Architecture: BEM + CSS Custom Properties
-   Responsive: Mobile-First (375px → 768px → 1200px)
+   HERITAGE HOMEWORKS — style.css
+   BEM + CSS Custom Properties | Mobile-first (480 → 768 → 1200px)
    ========================================================================== */
 
-/* --------------------------------------------------------------------------
-   1. GOOGLE FONTS IMPORT
-   -------------------------------------------------------------------------- */
+/* 1. GOOGLE FONTS
+   ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
 
-/* --------------------------------------------------------------------------
-   2. CSS CUSTOM PROPERTIES (DESIGN TOKENS)
-   Edit these to retheme the entire site at once.
-   -------------------------------------------------------------------------- */
+/* 2. DESIGN TOKENS
+   ========================================================================== */
 :root {
-  /* Brand Colors */
-  --color-primary:    #B87245;   /* Terracotta / Bronze accent */
-  --color-primary-lt: #D4956A;   /* Lighter bronze for hover states */
-  --color-bg:         #FAF8F4;   /* Warm cream background */
-  --color-bg-alt:     #F2EDE6;   /* Slightly darker cream for alternating sections */
-  --color-surface:    #FFFFFF;   /* Pure white cards/panels */
-  --color-text:       #1C1C1B;   /* Near-black for body */
-  --color-text-mid:   #5A5649;   /* Mid-tone for labels / subtitles */
-  --color-text-light: #9A9186;   /* Light tone for secondary info */
-  --color-border:     #E0D9D0;   /* Subtle warm border */
-  --color-overlay:    rgba(28, 28, 27, 0.42); /* Hero image overlay */
+  --color-primary: #B87245;
+  --color-primary-lt: #D4956A;
+  --color-bg: #FAF8F4;
+  --color-bg-alt: #F2EDE6;
+  --color-surface: #FFFFFF;
+  --color-text: #1C1C1B;
+  --color-text-mid: #5A5649;
+  --color-text-light: #9A9186;
+  --color-border: #E0D9D0;
+  --color-overlay: rgba(28, 28, 27, 0.42);
 
-  /* Typography */
-  --font-serif:  'Playfair Display', 'Georgia', serif;
-  --font-sans:   'Inter', 'Helvetica Neue', sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', 'Helvetica Neue', sans-serif;
 
-  /* Font Sizes — fluid/mobile base */
-  --fs-xs:    0.6875rem;   /* 11px */
-  --fs-sm:    0.8125rem;   /* 13px */
-  --fs-base:  1rem;        /* 16px */
-  --fs-md:    1.125rem;    /* 18px */
-  --fs-lg:    1.375rem;    /* 22px */
-  --fs-xl:    1.75rem;     /* 28px */
-  --fs-2xl:   2.25rem;     /* 36px */
-  --fs-3xl:   3rem;        /* 48px */
-  --fs-4xl:   4rem;        /* 64px */
+  --fs-xs: 0.6875rem;
+  --fs-sm: 0.8125rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.375rem;
+  --fs-xl: 1.75rem;
+  --fs-2xl: 2.25rem;
+  --fs-3xl: 3rem;
+  --fs-4xl: 4rem;
 
-  /* Spacing Scale */
-  --sp-1:  0.25rem;
-  --sp-2:  0.5rem;
-  --sp-3:  0.75rem;
-  --sp-4:  1rem;
-  --sp-5:  1.25rem;
-  --sp-6:  1.5rem;
-  --sp-8:  2rem;
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.25rem;
+  --sp-6: 1.5rem;
+  --sp-8: 2rem;
   --sp-10: 2.5rem;
   --sp-12: 3rem;
   --sp-16: 4rem;
   --sp-20: 5rem;
   --sp-24: 6rem;
-  --sp-32: 8rem;
 
-  /* Layout */
-  --max-width:     1100px;
-  --nav-height:    72px;
-  --radius-sm:     4px;
-  --radius-md:     8px;
-
-  /* Transitions */
-  --transition-fast: 0.2s ease;
-  --transition-med:  0.35s ease;
+  --max-width: 1100px;
+  --nav-height: 72px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --ease: 0.2s ease;
+  --ease-med: 0.35s ease;
 }
 
-/* --------------------------------------------------------------------------
-   3. CSS RESET & BASE
-   -------------------------------------------------------------------------- */
-*, *::before, *::after {
+/* 3. RESET & BASE
+   ========================================================================== */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -78,18 +67,15 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
 }
 
 body {
   font-family: var(--font-sans);
   font-size: var(--fs-base);
-  font-weight: 400;
   line-height: 1.7;
   color: var(--color-text);
-  background-color: var(--color-bg);
+  background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 img {
@@ -107,34 +93,16 @@ ul {
   list-style: none;
 }
 
-/* --------------------------------------------------------------------------
-   4. TYPOGRAPHY UTILITIES
-   -------------------------------------------------------------------------- */
+/* 4. UTILITIES
+   ========================================================================== */
 .u-label {
-  font-family: var(--font-sans);
   font-size: var(--fs-xs);
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-text-mid);
-}
-
-.u-serif-xl {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: var(--fs-2xl);
-  line-height: 1.15;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--color-primary);
-}
-
-.u-serif-body {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: var(--fs-lg);
-  line-height: 1.5;
-  color: var(--color-text);
+  margin-bottom: var(--sp-4);
+  display: block;
 }
 
 .u-divider {
@@ -145,9 +113,6 @@ ul {
   margin: var(--sp-4) auto;
 }
 
-/* --------------------------------------------------------------------------
-   5. LAYOUT UTILITIES
-   -------------------------------------------------------------------------- */
 .container {
   width: 100%;
   max-width: var(--max-width);
@@ -160,28 +125,55 @@ ul {
 }
 
 .section--alt {
-  background-color: var(--color-bg-alt);
+  background: var(--color-bg-alt);
 }
 
-/* --------------------------------------------------------------------------
-   6. NAVIGATION — BEM: .nav
-   -------------------------------------------------------------------------- */
+.section--plain {
+  background: var(--color-bg);
+}
 
-/* Hide the checkbox toggle — used purely for CSS hamburger hack */
+/* Fade-up entrance animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.anim-fade-up {
+  animation: fadeUp 0.75s ease both;
+}
+
+.anim-delay-1 {
+  animation-delay: 0.10s;
+}
+
+.anim-delay-2 {
+  animation-delay: 0.22s;
+}
+
+.anim-delay-3 {
+  animation-delay: 0.34s;
+}
+
+/* 5. NAVIGATION
+   ========================================================================== */
 #nav-toggle {
   display: none;
 }
 
 .nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0 0 auto;
   z-index: 1000;
   height: var(--nav-height);
   background: rgba(250, 248, 244, 0.96);
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--color-border);
   display: flex;
   align-items: center;
@@ -198,13 +190,11 @@ ul {
   gap: var(--sp-4);
 }
 
-/* Logo */
 .nav__logo {
   display: flex;
   align-items: center;
   gap: var(--sp-3);
   flex-shrink: 0;
-  text-decoration: none;
 }
 
 .nav__logo-img {
@@ -215,14 +205,10 @@ ul {
 .nav__logo-text {
   font-family: var(--font-serif);
   font-size: var(--fs-sm);
-  font-weight: 500;
   letter-spacing: 0.08em;
-  color: var(--color-text);
-  line-height: 1.2;
-  display: none; /* hidden on mobile, shown on tablet+ */
+  display: none;
 }
 
-/* Desktop navigation links (hidden on mobile by default) */
 .nav__menu {
   display: none;
   gap: var(--sp-8);
@@ -235,7 +221,7 @@ ul {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-text-mid);
-  transition: color var(--transition-fast);
+  transition: color var(--ease);
   position: relative;
 }
 
@@ -247,12 +233,13 @@ ul {
   width: 0;
   height: 1px;
   background: var(--color-primary);
-  transition: width var(--transition-fast);
+  transition: width var(--ease);
 }
 
 .nav__link:hover {
   color: var(--color-primary);
 }
+
 .nav__link:hover::after {
   width: 100%;
 }
@@ -262,15 +249,18 @@ ul {
   color: var(--color-bg);
   padding: var(--sp-2) var(--sp-5);
   border-radius: var(--radius-sm);
-  transition: background var(--transition-fast), color var(--transition-fast);
+  transition: background var(--ease);
 }
+
 .nav__link--cta:hover {
   background: var(--color-primary-lt);
   color: var(--color-surface);
 }
-.nav__link--cta::after { display: none; }
 
-/* Hamburger button */
+.nav__link--cta::after {
+  display: none;
+}
+
 .nav__hamburger {
   display: flex;
   flex-direction: column;
@@ -281,8 +271,9 @@ ul {
   cursor: pointer;
   padding: var(--sp-1);
   border-radius: var(--radius-sm);
-  transition: background var(--transition-fast);
+  transition: background var(--ease);
 }
+
 .nav__hamburger:hover {
   background: var(--color-bg-alt);
 }
@@ -293,11 +284,10 @@ ul {
   height: 1.5px;
   background: var(--color-text);
   border-radius: 2px;
-  transition: transform var(--transition-med), opacity var(--transition-med), width var(--transition-med);
+  transition: transform var(--ease-med), opacity var(--ease-med), width var(--ease-med);
   transform-origin: center;
 }
 
-/* Mobile drawer */
 .nav__drawer {
   position: fixed;
   top: var(--nav-height);
@@ -311,7 +301,7 @@ ul {
   gap: var(--sp-5);
   transform: translateY(-110%);
   opacity: 0;
-  transition: transform var(--transition-med), opacity var(--transition-med);
+  transition: transform var(--ease-med), opacity var(--ease-med);
   z-index: 999;
 }
 
@@ -319,26 +309,27 @@ ul {
   font-size: var(--fs-base);
 }
 
-/* Toggle state — when checkbox is checked */
-#nav-toggle:checked ~ .nav .nav__drawer {
+/* Hamburger toggle states */
+#nav-toggle:checked~.nav .nav__drawer {
   transform: translateY(0);
   opacity: 1;
 }
 
-#nav-toggle:checked ~ .nav .nav__hamburger-bar:nth-child(1) {
+#nav-toggle:checked~.nav .nav__hamburger-bar:nth-child(1) {
   transform: translateY(6.5px) rotate(45deg);
 }
-#nav-toggle:checked ~ .nav .nav__hamburger-bar:nth-child(2) {
+
+#nav-toggle:checked~.nav .nav__hamburger-bar:nth-child(2) {
   opacity: 0;
   width: 0;
 }
-#nav-toggle:checked ~ .nav .nav__hamburger-bar:nth-child(3) {
+
+#nav-toggle:checked~.nav .nav__hamburger-bar:nth-child(3) {
   transform: translateY(-6.5px) rotate(-45deg);
 }
 
-/* --------------------------------------------------------------------------
-   7. HERO SECTION — BEM: .hero
-   -------------------------------------------------------------------------- */
+/* 6. HERO
+   ========================================================================== */
 .hero {
   position: relative;
   min-height: 100svh;
@@ -354,14 +345,12 @@ ul {
   inset: 0;
   background-size: cover;
   background-position: center top;
-  z-index: 0;
 }
 
 .hero__overlay {
   position: absolute;
   inset: 0;
   background: var(--color-overlay);
-  z-index: 1;
 }
 
 .hero__content {
@@ -375,12 +364,11 @@ ul {
 }
 
 .hero__eyebrow {
-  font-family: var(--font-sans);
   font-size: var(--fs-xs);
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.75);
   margin-bottom: var(--sp-4);
 }
 
@@ -390,42 +378,39 @@ ul {
   font-size: var(--fs-3xl);
   line-height: 1.05;
   letter-spacing: 0.05em;
-  color: #FFFFFF;
-  margin-bottom: var(--sp-5);
   text-transform: uppercase;
+  color: #fff;
+  margin-bottom: var(--sp-5);
 }
 
 .hero__subtitle {
-  font-family: var(--font-sans);
   font-size: var(--fs-sm);
-  font-weight: 400;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
   margin-bottom: var(--sp-8);
 }
 
 .hero__cta {
   display: inline-block;
   padding: var(--sp-4) var(--sp-10);
-  border: 1px solid rgba(255,255,255,0.8);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   color: #fff;
   font-size: var(--fs-xs);
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  transition: background var(--transition-fast), color var(--transition-fast);
-}
-.hero__cta:hover {
-  background: rgba(255,255,255,0.15);
+  transition: background var(--ease);
 }
 
-/* --------------------------------------------------------------------------
-   8. PHILOSOPHY SECTION — BEM: .philosophy
-   -------------------------------------------------------------------------- */
+.hero__cta:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* 7. PHILOSOPHY
+   ========================================================================== */
 .philosophy {
   padding: var(--sp-20) 0;
-  background: var(--color-bg);
 }
 
 .philosophy__inner {
@@ -440,7 +425,6 @@ ul {
   font-style: italic;
   font-size: var(--fs-xl);
   line-height: 1.45;
-  color: var(--color-text);
   border-left: 2px solid var(--color-primary);
   padding-left: var(--sp-6);
 }
@@ -452,16 +436,33 @@ ul {
   margin-bottom: var(--sp-4);
 }
 
-.philosophy__body p:last-child {
+.philosophy__body p:last-of-type {
   margin-bottom: 0;
 }
 
-/* --------------------------------------------------------------------------
-   9. FEATURED LISTING CARD — BEM: .listing-card
-   -------------------------------------------------------------------------- */
+/* Inline link inside philosophy body */
+.philosophy__link {
+  display: inline-block;
+  margin-top: var(--sp-6);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  border-bottom: 1px solid var(--color-primary);
+  padding-bottom: 2px;
+  transition: color var(--ease), border-color var(--ease);
+}
+
+.philosophy__link:hover {
+  color: var(--color-primary-lt);
+  border-color: var(--color-primary-lt);
+}
+
+/* 8. LISTINGS GRID
+   ========================================================================== */
 .listings {
   padding: var(--sp-20) 0;
-  background: var(--color-bg-alt);
 }
 
 .listings__header {
@@ -488,12 +489,17 @@ ul {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   overflow: hidden;
-  transition: transform var(--transition-med), box-shadow var(--transition-med);
+  transition: transform var(--ease-med), box-shadow var(--ease-med);
 }
 
 .listing-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(28,28,27,0.1);
+  box-shadow: 0 16px 40px rgba(28, 28, 27, 0.1);
+}
+
+.listing-card--placeholder {
+  opacity: 0.45;
+  pointer-events: none;
 }
 
 .listing-card__img-wrap {
@@ -502,12 +508,20 @@ ul {
   aspect-ratio: 16/10;
 }
 
+.listing-card__img-wrap--empty {
+  background: var(--color-bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .listing-card__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s ease;
 }
+
 .listing-card:hover .listing-card__img {
   transform: scale(1.04);
 }
@@ -525,8 +539,17 @@ ul {
   padding: var(--sp-1) var(--sp-3);
 }
 
+.listing-card__placeholder-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--color-text-light);
+  font-size: var(--fs-base);
+  text-align: center;
+  padding: var(--sp-4);
+}
+
 .listing-card__body {
-  padding: var(--sp-6) var(--sp-6) var(--sp-6);
+  padding: var(--sp-6);
 }
 
 .listing-card__name {
@@ -537,6 +560,10 @@ ul {
   letter-spacing: 0.05em;
   color: var(--color-primary);
   margin-bottom: var(--sp-2);
+}
+
+.listing-card__name--dim {
+  color: var(--color-text-light);
 }
 
 .listing-card__meta {
@@ -551,8 +578,6 @@ ul {
   display: flex;
   gap: var(--sp-5);
   flex-wrap: wrap;
-  font-size: var(--fs-sm);
-  color: var(--color-text-mid);
   border-top: 1px solid var(--color-border);
   padding-top: var(--sp-4);
   margin-top: var(--sp-4);
@@ -568,7 +593,6 @@ ul {
   font-family: var(--font-serif);
   font-size: var(--fs-lg);
   font-weight: 500;
-  color: var(--color-text);
 }
 
 .listing-card__spec-key {
@@ -588,19 +612,67 @@ ul {
   color: var(--color-primary);
   border-bottom: 1px solid var(--color-primary);
   padding-bottom: 2px;
-  transition: color var(--transition-fast), border-color var(--transition-fast);
+  transition: color var(--ease), border-color var(--ease);
 }
+
 .listing-card__cta:hover {
   color: var(--color-primary-lt);
   border-color: var(--color-primary-lt);
 }
 
-/* --------------------------------------------------------------------------
-   10. FOOTER — BEM: .footer
-   -------------------------------------------------------------------------- */
+/* 9. CONTACT SECTION
+   ========================================================================== */
+.contact {
+  text-align: center;
+}
+
+.contact .container {
+  max-width: 600px;
+}
+
+.contact__body {
+  margin-top: var(--sp-6);
+  color: var(--color-text-mid);
+  font-size: var(--fs-base);
+  line-height: 1.8;
+}
+
+.contact__links {
+  margin-top: var(--sp-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.contact__phone {
+  font-size: var(--fs-xl);
+  font-family: var(--font-serif);
+  color: var(--color-primary);
+  font-weight: 500;
+  transition: color var(--ease);
+}
+
+.contact__phone:hover {
+  color: var(--color-primary-lt);
+}
+
+.contact__email {
+  font-size: var(--fs-sm);
+  color: var(--color-text-light);
+  letter-spacing: 0.06em;
+  transition: color var(--ease);
+}
+
+.contact__email:hover {
+  color: var(--color-text-mid);
+}
+
+/* 10. FOOTER
+   ========================================================================== */
 .footer {
   background: var(--color-text);
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   padding: var(--sp-12) 0 var(--sp-8);
   text-align: center;
 }
@@ -613,7 +685,6 @@ ul {
 
 .footer__logo img {
   height: 52px;
-  width: auto;
   filter: invert(1) brightness(2);
   opacity: 0.85;
 }
@@ -621,8 +692,7 @@ ul {
 .footer__tagline {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: var(--fs-base);
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5);
   margin-bottom: var(--sp-8);
 }
 
@@ -638,9 +708,10 @@ ul {
   font-size: var(--fs-xs);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
-  transition: color var(--transition-fast);
+  color: rgba(255, 255, 255, 0.55);
+  transition: color var(--ease);
 }
+
 .footer__link:hover {
   color: var(--color-primary-lt);
 }
@@ -648,22 +719,21 @@ ul {
 .footer__divider {
   width: 60px;
   height: 1px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
   margin: 0 auto var(--sp-6);
 }
 
 .footer__copy {
   font-size: var(--fs-xs);
-  color: rgba(255,255,255,0.3);
+  color: rgba(255, 255, 255, 0.3);
   letter-spacing: 0.08em;
 }
 
-/* --------------------------------------------------------------------------
-   11. PRODUCT PAGE — Property Header
-   BEM: .property-header
-   -------------------------------------------------------------------------- */
+/* 11. PRODUCT PAGE — Property Header
+   ========================================================================== */
 .property-header {
-  padding: var(--sp-16) 0 var(--sp-12);
+  padding-top: calc(var(--nav-height) + var(--sp-12));
+  padding-bottom: var(--sp-12);
   background: var(--color-bg);
   text-align: center;
 }
@@ -702,11 +772,8 @@ ul {
   color: var(--color-text-light);
 }
 
-/* --------------------------------------------------------------------------
-   12. PRODUCT PAGE — Photo Gallery Strip
-   BEM: .photo-strip
-   Layout: Always 2 images side by side (like the reference design)
-   -------------------------------------------------------------------------- */
+/* 12. PRODUCT PAGE — Photo Strip
+   ========================================================================== */
 .photo-strip {
   background: var(--color-bg);
   padding: 0 var(--sp-5) var(--sp-6);
@@ -714,54 +781,27 @@ ul {
 
 .photo-strip__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: var(--sp-3);
+}
+
+/* Single image → cap width and center so it doesn't become a panoramic stripe */
+.photo-strip__grid:has(> img:only-child) {
+  max-width: 580px;
+  margin: 0 auto;
 }
 
 .photo-strip__img {
   width: 100%;
-  height: 200px;             /* equal height on mobile */
+  height: 200px;
   object-fit: cover;
-  display: block;
+  object-position: center;
   border-radius: var(--radius-md);
-  box-shadow: 0 4px 24px rgba(28,28,27,0.10);
+  box-shadow: 0 4px 24px rgba(28, 28, 27, 0.10);
 }
 
-@media (min-width: 480px) {
-  .photo-strip__img {
-    height: 260px;
-  }
-}
-
-@media (min-width: 768px) {
-  .photo-strip {
-    padding: 0 var(--sp-8) var(--sp-8);
-  }
-
-  .photo-strip__grid {
-    gap: var(--sp-5);
-  }
-
-  .photo-strip__img {
-    height: 360px;
-    border-radius: 10px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .photo-strip {
-    padding: 0 var(--sp-12) var(--sp-10);
-  }
-
-  .photo-strip__img {
-    height: 440px;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   13. PRODUCT PAGE — Agent Card
-   BEM: .agent-card
-   -------------------------------------------------------------------------- */
+/* 13. PRODUCT PAGE — Agent Card
+   ========================================================================== */
 .agent-card {
   padding: var(--sp-10) 0;
   background: var(--color-bg);
@@ -790,36 +830,30 @@ ul {
 }
 
 .agent-card__name {
-  font-family: var(--font-sans);
   font-size: var(--fs-md);
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--color-text);
 }
 
 .agent-card__company {
   font-size: var(--fs-sm);
-  font-weight: 400;
   color: var(--color-text-mid);
-  letter-spacing: 0.04em;
 }
 
 .agent-card__phone {
   font-size: var(--fs-sm);
   font-weight: 500;
   color: var(--color-primary);
-  letter-spacing: 0.04em;
-  transition: color var(--transition-fast);
+  transition: color var(--ease);
 }
+
 .agent-card__phone:hover {
   color: var(--color-primary-lt);
 }
 
-/* --------------------------------------------------------------------------
-   14. PRODUCT PAGE — Section Label + Image Block
-   BEM: .annotated-section
-   -------------------------------------------------------------------------- */
+/* 14. PRODUCT PAGE — Annotated Sections
+   ========================================================================== */
 .annotated-section {
   padding: var(--sp-12) 0 var(--sp-8);
   background: var(--color-bg);
@@ -843,16 +877,17 @@ ul {
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-text);
   margin-bottom: var(--sp-5);
 }
 
 .annotated-section__img {
+  display: block;
   width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
   border-radius: var(--radius-sm);
 }
 
-/* Floor plans: two side by side */
 .floorplan-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -862,21 +897,16 @@ ul {
 
 .floorplan-grid__img {
   width: 100%;
-  height: auto;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   background: var(--color-surface);
   padding: var(--sp-2);
 }
 
-/* --------------------------------------------------------------------------
-   15. PRODUCT PAGE — DETAILS Section
-   BEM: .property-details
-   ✏️ This is the main edit zone for each new listing
-   -------------------------------------------------------------------------- */
+/* 15. PRODUCT PAGE — Property Details
+   ========================================================================== */
 .property-details {
   padding: var(--sp-16) 0 var(--sp-20);
-  background: var(--color-bg);
 }
 
 .property-details__heading {
@@ -908,8 +938,6 @@ ul {
   display: flex;
   align-items: baseline;
   gap: var(--sp-3);
-  font-size: var(--fs-base);
-  color: var(--color-text);
   line-height: 1.5;
 }
 
@@ -928,23 +956,33 @@ ul {
 }
 
 .property-details__desc p {
-  font-size: var(--fs-base);
   color: var(--color-text-mid);
   line-height: 1.8;
   margin-bottom: var(--sp-4);
 }
 
-/* --------------------------------------------------------------------------
-   16. PRODUCT PAGE — Material Selection Boards
-   BEM: .material-board
-   -------------------------------------------------------------------------- */
+.btn-primary {
+  display: inline-block;
+  margin-top: var(--sp-8);
+  padding: var(--sp-4) var(--sp-10);
+  background: var(--color-primary);
+  color: #fff;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: background var(--ease);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-lt);
+}
+
+/* 16. PRODUCT PAGE — Material Boards
+   ========================================================================== */
 .material-board {
   padding: var(--sp-12) 0;
   border-top: 1px solid var(--color-border);
-}
-
-.material-board__header {
-  margin-bottom: var(--sp-6);
 }
 
 .material-board__title {
@@ -953,7 +991,7 @@ ul {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-text-mid);
-  margin-bottom: var(--sp-2);
+  margin-bottom: var(--sp-6);
 }
 
 .material-board__layout {
@@ -976,10 +1014,8 @@ ul {
   margin-top: var(--sp-2);
 }
 
-/* --------------------------------------------------------------------------
-   17. PRODUCT PAGE — Appliance Strip
-   BEM: .appliance-strip
-   -------------------------------------------------------------------------- */
+/* 17. PRODUCT PAGE — Appliance Strip
+   ========================================================================== */
 .appliance-strip {
   padding: var(--sp-12) 0 var(--sp-16);
   background: var(--color-bg-alt);
@@ -996,39 +1032,29 @@ ul {
   padding: 0 var(--sp-5);
 }
 
-/*
- * The scroll wrapper must escape the container's padding so images
- * can bleed to both edges on mobile. We use negative margins + padding
- * to achieve a "full-bleed scroll" inside a padded container.
- */
 .appliance-strip__scroll {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  /* Escape container padding on mobile */
   margin-left: calc(-1 * var(--sp-5));
   margin-right: calc(-1 * var(--sp-5));
-  padding-left: var(--sp-5);
-  padding-right: var(--sp-5);
-  padding-bottom: var(--sp-2); /* prevents card shadow clipping */
+  padding: 0 var(--sp-5) var(--sp-2);
 }
-.appliance-strip__scroll::-webkit-scrollbar { display: none; }
 
-/*
- * Flexbox with fixed item widths forces the track to exceed the
- * container width → overflow-x: auto activates the swipe scroll.
- * (CSS Grid with 1fr prevented overflow — items would shrink instead.)
- */
+.appliance-strip__scroll::-webkit-scrollbar {
+  display: none;
+}
+
 .appliance-strip__track {
   display: flex;
   flex-wrap: nowrap;
   gap: var(--sp-4);
-  width: max-content; /* lets the row grow as wide as needed */
+  width: max-content;
 }
 
 .appliance-strip__item {
-  flex: 0 0 148px;          /* fixed width — critical for scroll to work */
+  flex: 0 0 148px;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
@@ -1037,7 +1063,7 @@ ul {
   flex-direction: column;
   align-items: center;
   gap: var(--sp-3);
-  box-shadow: 0 2px 8px rgba(28,28,27,0.06);
+  box-shadow: 0 2px 8px rgba(28, 28, 27, 0.06);
 }
 
 .appliance-strip__img {
@@ -1056,46 +1082,9 @@ ul {
   line-height: 1.4;
 }
 
-/* On desktop let items expand evenly instead of fixed-width scrolling */
-@media (min-width: 1024px) {
-  .appliance-strip__scroll {
-    margin-left: 0;
-    margin-right: 0;
-    overflow-x: visible;
-  }
-
-  .appliance-strip__track {
-    width: 100%;
-  }
-
-  .appliance-strip__item {
-    flex: 1 1 0;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   18. SCROLL REVEAL — subtle fade up on load
-   (Pure CSS animation triggered by animation-play-state)
-   -------------------------------------------------------------------------- */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.anim-fade-up {
-  animation: fadeUp 0.75s ease both;
-}
-
-.anim-delay-1 { animation-delay: 0.1s; }
-.anim-delay-2 { animation-delay: 0.22s; }
-.anim-delay-3 { animation-delay: 0.34s; }
-.anim-delay-4 { animation-delay: 0.46s; }
-
-/* --------------------------------------------------------------------------
-   19. RESPONSIVE — Tablet (768px+)
-   -------------------------------------------------------------------------- */
+/* 18. RESPONSIVE — Tablet 768px+
+   ========================================================================== */
 @media (min-width: 768px) {
-  /* Nav */
   .nav__logo-text {
     display: block;
   }
@@ -1109,63 +1098,61 @@ ul {
   }
 
   .nav__drawer {
-    display: none !important; /* always hidden on tablet+ */
+    display: none !important;
   }
 
-  /* Hero */
   .hero__title {
     font-size: var(--fs-4xl);
   }
 
-  /* Philosophy */
   .philosophy__inner {
     grid-template-columns: 1fr 1fr;
     gap: var(--sp-16);
   }
 
-  /* Listings */
   .listings__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Product header */
   .property-header__name {
     font-size: var(--fs-4xl);
   }
 
-  /* Agent card */
   .agent-card__photo {
     width: 100px;
     height: 100px;
   }
 
-  /* Material boards */
   .material-board__layout {
     grid-template-columns: 1fr 1fr;
     align-items: start;
   }
 
+  .photo-strip {
+    padding: 0 var(--sp-8) var(--sp-8);
+  }
 
-  /* Floorplans */
-  .floorplan-grid {
-    grid-template-columns: 1fr 1fr;
+  .photo-strip__grid {
+    gap: var(--sp-5);
+  }
+
+  .photo-strip__img {
+    height: 360px;
+    border-radius: 10px;
   }
 }
 
-/* --------------------------------------------------------------------------
-   20. RESPONSIVE — Desktop (1200px+)
-   -------------------------------------------------------------------------- */
+/* 19. RESPONSIVE — Desktop 1200px+
+   ========================================================================== */
 @media (min-width: 1200px) {
   :root {
-    --fs-xs:    0.75rem;
-    --fs-sm:    0.875rem;
-    --fs-base:  1rem;
-    --fs-md:    1.125rem;
-    --fs-lg:    1.5rem;
-    --fs-xl:    2rem;
-    --fs-2xl:   2.75rem;
-    --fs-3xl:   3.5rem;
-    --fs-4xl:   5rem;
+    --fs-xs: 0.75rem;
+    --fs-sm: 0.875rem;
+    --fs-lg: 1.5rem;
+    --fs-xl: 2rem;
+    --fs-2xl: 2.75rem;
+    --fs-3xl: 3.5rem;
+    --fs-4xl: 5rem;
   }
 
   .listings__grid {
@@ -1179,14 +1166,29 @@ ul {
     align-items: start;
   }
 
-  .property-details__left { /* left column with heading + price */
-  }
-
   .material-board__layout {
     grid-template-columns: 1fr 2fr;
   }
 
+  .photo-strip {
+    padding: 0 var(--sp-12) var(--sp-10);
+  }
+
+  .photo-strip__img {
+    height: 440px;
+  }
+
+  .appliance-strip__scroll {
+    margin-left: 0;
+    margin-right: 0;
+    overflow-x: visible;
+  }
+
   .appliance-strip__track {
-    min-width: unset;
+    width: 100%;
+  }
+
+  .appliance-strip__item {
+    flex: 1 1 0;
   }
 }

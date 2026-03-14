@@ -16,37 +16,28 @@
 
 <body>
 
-  <!-- =====================================================================
-       HAMBURGER TOGGLE (CSS-only — no JavaScript required)
-       ===================================================================== -->
+  <!-- Hamburger toggle — CSS-only, no JavaScript required -->
   <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation menu" />
 
-  <!-- =====================================================================
-       NAVIGATION
-       ===================================================================== -->
+  <!-- NAVIGATION -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav__inner">
-
       <a href="index.html" class="nav__logo" aria-label="Heritage Homeworks home">
         <img src="assets/heritage-logo.jpeg" alt="Heritage Homeworks logo" class="nav__logo-img" />
         <span class="nav__logo-text">Heritage Homeworks</span>
       </a>
-
       <ul class="nav__menu" role="list">
         <li><a href="index.html" class="nav__link">Home</a></li>
         <li><a href="home-product.html" class="nav__link">Current Listing</a></li>
         <li><a href="index.html#philosophy" class="nav__link">Philosophy</a></li>
         <li><a href="index.html#contact" class="nav__link nav__link--cta">Contact Us</a></li>
       </ul>
-
       <label for="nav-toggle" class="nav__hamburger" aria-label="Open menu">
         <span class="nav__hamburger-bar"></span>
         <span class="nav__hamburger-bar"></span>
         <span class="nav__hamburger-bar"></span>
       </label>
-
     </div>
-
     <nav class="nav__drawer" aria-label="Mobile navigation">
       <a href="index.html" class="nav__link">Home</a>
       <a href="home-product.html" class="nav__link">Current Listing</a>
@@ -56,44 +47,30 @@
   </nav>
 
   <!-- =====================================================================
-       ✏️ ══════════════════════════════════════════════════════════════════
-       PROPERTY HEADER — EDIT ZONE START
-       When you sell a property and want to upload a new one:
-       1. Change the property name (data-property="name")
+       ✏️ PROPERTY HEADER — EDIT ZONE
+       1. Change the property name
        2. Change the estimated completion date
        3. Update the agent information below
-       ══════════════════════════════════════════════════════════════════ ✏️
        ===================================================================== -->
-  <header class="property-header" style="padding-top: calc(var(--nav-height) + var(--sp-12));"
-    aria-label="Property listing header">
+  <header class="property-header" aria-label="Property listing header">
     <div class="container">
 
       <img src="assets/heritage-logo-banner.jpeg" alt="Heritage Homeworks" class="property-header__logo anim-fade-up" />
 
-      <!-- ✏️ EDIT: Listing intro label — e.g. "HERITAGE HOMEWORKS PRESENTS:" -->
-      <p class="property-header__presents anim-fade-up anim-delay-1">
-        Heritage Homeworks Presents:
-      </p>
+      <!-- ✏️ EDIT: Intro label -->
+      <p class="property-header__presents anim-fade-up anim-delay-1">Heritage Homeworks Presents:</p>
 
-      <!-- ✏️ EDIT: Property name — change to the new property name each listing -->
-      <h1 class="property-header__name anim-fade-up anim-delay-2" data-property="name">
-        Annuvalotto
-      </h1>
+      <!-- ✏️ EDIT: Property name -->
+      <h1 class="property-header__name anim-fade-up anim-delay-2">Vialetto Manor</h1>
 
-      <!-- ✏️ EDIT: Estimated completion month and year -->
-      <p class="property-header__completion anim-fade-up anim-delay-3">
-        Estimated Completion August 2025
-      </p>
-      <!-- ✏️ ══════════════ PROPERTY HEADER — EDIT ZONE END ══════════════ ✏️ -->
+      <!-- ✏️ EDIT: Estimated completion -->
+      <p class="property-header__completion anim-fade-up anim-delay-3">Estimated Completion 2026</p>
 
     </div>
   </header>
 
   <!-- =====================================================================
-       PHOTO STRIP — Construction Progress + First Render
-       ✏️ EDIT: Replace both images when uploading a new property.
-         - hero-construction.jpg → current progress photo of the new build
-         - exterior-render.jpg  → architectural render of the new property
+       PHOTO STRIP — ✏️ EDIT: Replace both images for each new property
        ===================================================================== -->
   <section class="photo-strip" aria-label="Property photography">
     <div class="photo-strip__grid">
@@ -101,198 +78,153 @@
       <img src="assets/home-section-pic.jpeg" alt="Annuvalotto — under construction exterior view"
         class="photo-strip__img" loading="eager" />
       <!-- ✏️ EDIT IMAGE: Architectural exterior render -->
-      <img src="assets/home-section-pic.jpeg" alt="Annuvalotto — architectural exterior render" class="photo-strip__img"
-        loading="eager" />
+      <!-- <img src="assets/home-section-pic.jpeg" alt="Annuvalotto — architectural exterior render" class="photo-strip__img"
+        loading="eager" /> -->
     </div>
   </section>
 
   <!-- =====================================================================
-       AGENT CARD
-       ✏️ EDIT: Update agent name, brokerage, phone, and photo for each listing.
+       AGENT CARD — ✏️ EDIT: Agent name, brokerage, phone, photo
        ===================================================================== -->
   <section class="agent-card" aria-label="Listing agent">
     <div class="container">
       <div class="agent-card__inner">
-
-        <!-- ✏️ EDIT IMAGE: Replace with the listing agent's headshot photo -->
-        <img src="assets/agent-photo.jpg" alt="Jason Knight — Heritage Homeworks Agent" class="agent-card__photo" />
-
+        <!-- ✏️ EDIT IMAGE: Agent headshot -->
+        <img src="assets/miguel-profile-pic.jpeg" alt="Miguel Jaimes — Heritage Homeworks Agent"
+          class="agent-card__photo" />
         <div class="agent-card__info">
           <!-- ✏️ EDIT: Agent full name -->
           <span class="agent-card__name">Miguel Jaimes</span>
-          <!-- ✏️ EDIT: Brokerage / company name -->
+          <!-- ✏️ EDIT: Brokerage name -->
           <span class="agent-card__company">Heritage Homeworks</span>
-          <!-- ✏️ EDIT: Phone number (update href AND visible text) -->
+          <!-- ✏️ EDIT: Phone (update href AND display text) -->
           <a href="tel:8015920730" class="agent-card__phone">801-592-0730</a>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- =====================================================================
-       EXTERIOR ANNOTATED SECTION
-       ✏️ EDIT: Replace exterior-render.jpg with a full hero exterior render of
-                the new property. Update the alt text accordingly.
+       EXTERIOR — ✏️ EDIT: Replace with full exterior render of new build
        ===================================================================== -->
   <section class="annotated-section" aria-labelledby="exterior-label">
     <div class="container">
-
       <p class="annotated-section__label" id="exterior-label">Annotated</p>
-
-      <!-- ✏️ EDIT: Section sub-label — area name e.g. "Exterior", "Front Elevation" -->
+      <!-- ✏️ EDIT: Section sub-label -->
       <p class="annotated-section__sublabel">Exterior</p>
-
       <!-- ✏️ EDIT IMAGE: Full exterior architectural render -->
       <img src="assets/exterior-render.jpg" alt="Annuvalotto — full exterior architectural render"
         class="annotated-section__img" loading="lazy" />
-
     </div>
   </section>
 
   <!-- =====================================================================
-       FLOOR PLANS
-       ✏️ EDIT: Replace both floorplan images with the new property's floor plans.
-                Typically: Main Floor on the left, Upper Floor on the right.
+       FLOOR PLANS — ✏️ EDIT: Main floor (left) and upper floor (right)
        ===================================================================== -->
   <section class="annotated-section annotated-section--alt" aria-labelledby="floorplan-label">
     <div class="container">
-
       <p class="annotated-section__label" id="floorplan-label">Annotated</p>
       <!-- ✏️ EDIT: Floor plan section label -->
       <p class="annotated-section__sublabel">Floor Plans</p>
-
       <div class="floorplan-grid">
         <!-- ✏️ EDIT IMAGE: Main floor plan -->
         <img src="assets/floorplan.jpg" alt="Annuvalotto — main floor plan" class="floorplan-grid__img"
           loading="lazy" />
         <!-- ✏️ EDIT IMAGE: Upper floor plan -->
         <img src="assets/floorplan.jpg" alt="Annuvalotto — upper floor plan" class="floorplan-grid__img" loading="lazy"
-          style="transform: scaleX(-1);" <!-- mirrored for visual distinction as placeholder -->
-        />
+          style="transform: scaleX(-1);" />
       </div>
-
     </div>
   </section>
 
   <!-- =====================================================================
-       ✏️ ══════════════════════════════════════════════════════════════════
-       PROPERTY DETAILS — MAIN EDIT ZONE
-       This section contains ALL pricing and specification data.
-       When uploading a new listing, update ONLY the content inside this
-       section. Do NOT change the class names or HTML structure.
-
-       Checklist for each new listing:
-         [ ] Price                      → .property-details__price
-         [ ] Square footage             → first .property-details__item
-         [ ] Garage size (Sq Ft)        → second item
-         [ ] Beds / Baths               → items 3 & 4
-         [ ] Lot size                   → fifth item
-         [ ] Additional features        → add/remove <li> items as needed
-         [ ] Description paragraphs     → .property-details__desc
-       ══════════════════════════════════════════════════════════════════ ✏️
+       ✏️ PROPERTY DETAILS — MAIN EDIT ZONE
+       Checklist per new listing:
+         [ ] Price               → .property-details__price
+         [ ] Sq Ft, Garage, Beds, Baths, Lot, Features → .property-details__list
+         [ ] Description         → .property-details__desc
        ===================================================================== -->
-  <section class="property-details" id="details" aria-labelledby="details-heading">
+  <section class="property-details section section--plain" id="details" aria-labelledby="details-heading">
     <div class="container">
 
       <div class="property-details__left">
         <h2 class="property-details__heading" id="details-heading">Details</h2>
 
-        <!-- ✏️ EDIT: Listing price -->
-        <p class="property-details__price">$2,399,900</p>
+        <!-- ✏️ EDIT: Price -->
+        <p class="property-details__price">Offered at $2,599,900</p>
 
         <ul class="property-details__list" role="list">
-          <!-- ✏️ EDIT: Total interior square footage -->
-          <li class="property-details__item">5,356 Sq Ft of Living Space</li>
-          <!-- ✏️ EDIT: Garage square footage -->
-          <li class="property-details__item">1,251 Sq Ft Garage</li>
-          <!-- ✏️ EDIT: Number of bedrooms -->
-          <li class="property-details__item">5 Bedrooms</li>
-          <!-- ✏️ EDIT: Number of bathrooms -->
-          <li class="property-details__item">5 Bathrooms</li>
-          <!-- ✏️ EDIT: Lot size in acres -->
-          <li class="property-details__item">.41 Acre Lot</li>
-          <!-- ✏️ EDIT: Additional features — add or remove <li> items freely -->
-          <li class="property-details__item">Primary Suite on Main Floor</li>
-          <li class="property-details__item">Oversized Chef's Kitchen</li>
-          <li class="property-details__item">Full Finished Basement</li>
-          <li class="property-details__item">Covered Outdoor Living Area</li>
-          <li class="property-details__item">Three-Car Attached Garage</li>
-          <li class="property-details__item">Smart Home Pre-wire Package</li>
+          <!-- ✏️ EDIT: Specs — add/remove <li> items freely -->
+          <li class="property-details__item">5,927 Sq Ft Finished Living Space (919 Sq Ft unfinished)</li>
+          <li class="property-details__item">1,051 Sq Ft Oversized Garage</li>
+          <li class="property-details__item">6 Bedrooms | 6 Bathrooms</li>
+          <li class="property-details__item">Situated on a 0.48 Acre View Lot</li>
+          <li class="property-details__item">Main-Floor Primary Suite</li>
+          <li class="property-details__item">48” Professional Range & 60” Built-In Refrigerator</li>
+          <li class="property-details__item">15’ Bi-Fold Glass Doors Opening to Expansive View Deck</li>
+          <li class="property-details__item">Vaulted Ceilings with Abundant Natural Light</li>
+          <li class="property-details__item">Custom Cabinetry & Built-Ins Throughout</li>
+          <li class="property-details__item">Dedicated Home Office</li>
+          <li class="property-details__item">Three Designer Fireplaces</li>
+          <li class="property-details__item">Three Private Decks with Incredible Views</li>
+          <li class="property-details__item">Home Theater / Golf Simulator Room (Unfinished)</li>
+          <li class="property-details__item">Gym room (Unfinished)</li>
+          <li class="property-details__item">Full Walk-Out Basement with 10’ Ceilings</li>
+          <li class="property-details__item">RV Parking</li>
+          <li class="property-details__item">One of the Best Views in the Neighborhood</li>
+          <li class="property-details__item">Massive 4,000 Sq Ft Backyard — Fully Graded and Ready for Your</li>
+          <li class="property-details__item">Dream Outdoor Space</li>
+
         </ul>
       </div>
 
       <div class="property-details__desc">
-
-        <!-- ✏️ EDIT: Property description paragraphs — write a compelling narrative for each new listing -->
-        <p>
-          Annuvalotto is an architectural statement of refined French country design set within one of Utah's most
-          coveted communities. The home's steeply pitched rooflines, natural stone cladding, and arched entryway create
-          a first impression that is both timeless and breathtaking.
-        </p>
-        <p>
-          Inside, the open-concept great room flows seamlessly to a chef's kitchen outfitted with professional-grade
-          Wolf and Sub-Zero appliances. Hand-selected Calacatta marble, custom cabinetry, and brushed brass hardware
-          define every space with an understated luxury.
-        </p>
-        <p>
-          The primary suite, positioned on the main floor for single-level convenience, features a spa-inspired bath
-          with heated floors, a soaking tub, and a walk-in closet designed by professional organizers. Four additional
-          bedrooms — each with en-suite access — accommodate family and guests with equal elegance.
-        </p>
-
-        <div style="margin-top: var(--sp-8);">
-          <a href="index.html#contact"
-            style="display:inline-block; padding: var(--sp-4) var(--sp-10); background: var(--color-primary); color: #fff; font-size: var(--fs-xs); font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; transition: background 0.2s ease;"
-            onmouseover="this.style.background='var(--color-primary-lt)'"
-            onmouseout="this.style.background='var(--color-primary)'">
-            Schedule a Showing
-          </a>
-        </div>
-
+        <!-- ✏️ EDIT: Property description — 3 paragraphs -->
+        <p>Perched on one of the most desirable view lots in the neighborhood, this stunning custom home blends luxury
+          design, thoughtful functionality, and incredible indoor-outdoor living. Offering 5,906 finished square feet
+          and 6,822 total square feet, the home features 6 bedrooms and 6 bathrooms, a spacious main-floor primary
+          suite, and expansive living areas designed for both everyday comfort and entertaining.</p>
+        <p>The chef’s kitchen is equipped with a 48” professional range, 60” built-in refrigerator, walk-in pantry, and
+          a full service kitchen, complemented by custom cabinetry and built-ins throughout the home.</p>
+        <p>Vaulted ceilings and a dramatic 15-foot bifold sliding glass door open the main living area to a large view
+          deck, creating seamless indoor-outdoor flow while capturing some of the best views in the neighborhood.
+          Additional highlights include three fireplaces, three private decks, and a 10’ ceiling walk-out basement with
+          space planned for a future home theater or golf simulator.</p>
+        <p>Situated on a 0.48 acre lot, the property features RV parking and a rare 12-foot-tall garage bay ideal for
+          boats, trailers, or recreational vehicles. The home also offers a massive 4,000 sq ft fully graded backyard
+          ready for your dream outdoor space, with additional land beyond the graded area providing even more
+          opportunity for future landscaping, outdoor amenities, or expansion.</p>
+        <a href="index.html#contact" class="btn-primary">Schedule a Showing</a>
       </div>
 
     </div>
   </section>
-  <!-- ✏️ ══════════════ PROPERTY DETAILS — EDIT ZONE END ════════════════ ✏️ -->
 
   <!-- =====================================================================
-       MATERIALS SECTIONS
-       ✏️ EDIT: Replace images in each .material-board section with mood board
-                images specific to the new property for each area.
-                Update the sublabel text to match the correct room name.
+       MATERIAL BOARDS — ✏️ EDIT: Replace images and room labels per listing
        ===================================================================== -->
-
-  <!-- Material Board 1: Exterior -->
-  <section class="section section--alt" aria-labelledby="mat-exterior-label">
+  <section class="section section--alt" aria-label="Material selections">
     <div class="container">
 
+      <!-- Board 1: Exterior -->
       <article class="material-board">
-        <div class="material-board__header">
-          <!-- ✏️ EDIT: Material board section label -->
-          <p class="material-board__title" id="mat-exterior-label">Material Selection</p>
-        </div>
-
+        <p class="material-board__title">Material Selection</p>
         <div class="material-board__layout">
-          <!-- ✏️ EDIT IMAGE: Material board image for this area -->
+          <!-- ✏️ EDIT IMAGE: Material board for this area -->
           <img src="assets/material-exterior.jpg" alt="Annuvalotto — exterior material selection board"
             class="material-board__img" loading="lazy" />
           <div>
             <img src="assets/exterior-render.jpg" alt="Annuvalotto — garage exterior elevation"
               class="material-board__img" loading="lazy" />
-            <!-- ✏️ EDIT: Area name displayed below the board -->
+            <!-- ✏️ EDIT: Room name label -->
             <p class="material-board__sublabel">Garage Exterior</p>
           </div>
         </div>
       </article>
 
-      <!-- Material Board 2: Kitchen -->
+      <!-- Board 2: Kitchen -->
       <article class="material-board">
-        <div class="material-board__header">
-          <!-- ✏️ EDIT: Section label for next board -->
-          <p class="material-board__title">Material Selection</p>
-        </div>
-
+        <p class="material-board__title">Material Selection</p>
         <div class="material-board__layout">
           <!-- ✏️ EDIT IMAGE: Kitchen material board -->
           <img src="assets/material-kitchen.jpg" alt="Annuvalotto — kitchen material selection board"
@@ -306,12 +238,9 @@
         </div>
       </article>
 
-      <!-- Material Board 3: Living / Kitchen 2 -->
+      <!-- Board 3: Living / Kitchen -->
       <article class="material-board">
-        <div class="material-board__header">
-          <p class="material-board__title">Material Selection</p>
-        </div>
-
+        <p class="material-board__title">Material Selection</p>
         <div class="material-board__layout">
           <!-- ✏️ EDIT IMAGE: Living/dining material board -->
           <img src="assets/material-laundry.jpg" alt="Annuvalotto — living and kitchen material selection"
@@ -325,14 +254,11 @@
         </div>
       </article>
 
-      <!-- Material Board 4: Pantry / Laundry Room -->
+      <!-- Board 4: Pantry / Laundry -->
       <article class="material-board">
-        <div class="material-board__header">
-          <p class="material-board__title">Material Selection</p>
-        </div>
-
+        <p class="material-board__title">Material Selection</p>
         <div class="material-board__layout">
-          <!-- ✏️ EDIT IMAGE: Pantry / laundry room material board -->
+          <!-- ✏️ EDIT IMAGE: Pantry/laundry material board -->
           <img src="assets/material-laundry.jpg" alt="Annuvalotto — pantry and laundry room materials"
             class="material-board__img" loading="lazy" />
           <div>
@@ -348,50 +274,40 @@
   </section>
 
   <!-- =====================================================================
-       APPLIANCE DETAILS STRIP
-       ✏️ EDIT: Replace the appliances image with the appliance lineup for each
-                new property. Update the appliance names in each .appliance-strip__name.
-                Add or remove .appliance-strip__item divs as needed.
+       APPLIANCE STRIP — ✏️ EDIT: Add/remove .appliance-strip__item freely
        ===================================================================== -->
   <section class="appliance-strip" aria-labelledby="appliances-label">
     <div class="container">
-
       <!-- ✏️ EDIT: Section label -->
       <p class="appliance-strip__title" id="appliances-label">Annuvalotto · Appliance Details</p>
-
       <div class="appliance-strip__scroll">
         <div class="appliance-strip__track">
 
-          <!-- ✏️ EDIT: Each item below = one appliance. Add/remove freely. -->
-
+          <!-- ✏️ EDIT: Each item = one appliance -->
           <div class="appliance-strip__item">
             <img src="assets/appliances.jpg" alt="Wolf 48&quot; Professional Range" class="appliance-strip__img"
               loading="lazy" style="object-position: 5% center;" />
             <!-- ✏️ EDIT: Appliance name -->
             <span class="appliance-strip__name">Wolf Range</span>
           </div>
-
           <div class="appliance-strip__item">
             <img src="assets/appliances.jpg" alt="Sub-Zero Built-in Refrigerator" class="appliance-strip__img"
               loading="lazy" style="object-position: 25% center;" />
             <!-- ✏️ EDIT: Appliance name -->
             <span class="appliance-strip__name">Sub-Zero Refrigerator</span>
           </div>
-
           <div class="appliance-strip__item">
             <img src="assets/appliances.jpg" alt="Bosch Dishwasher" class="appliance-strip__img" loading="lazy"
               style="object-position: 50% center;" />
             <!-- ✏️ EDIT: Appliance name -->
             <span class="appliance-strip__name">Bosch Dishwasher</span>
           </div>
-
           <div class="appliance-strip__item">
             <img src="assets/appliances.jpg" alt="Wolf Steam Oven" class="appliance-strip__img" loading="lazy"
               style="object-position: 75% center;" />
             <!-- ✏️ EDIT: Appliance name -->
             <span class="appliance-strip__name">Wolf Steam Oven</span>
           </div>
-
           <div class="appliance-strip__item">
             <img src="assets/appliances.jpg" alt="Sharp Microwave Drawer" class="appliance-strip__img" loading="lazy"
               style="object-position: 95% center;" />
@@ -401,13 +317,10 @@
 
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- =====================================================================
-       FOOTER
-       ===================================================================== -->
+  <!-- FOOTER -->
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__logo">
