@@ -46,7 +46,7 @@
   /* top=0, left=0, right=0 */
   z-index: 1000;
   height: var(--nav-height);
-  background: rgba(250, 248, 244, 0.96);
+  background: rgba(244, 239, 230, 0.96);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--color-border);
   display: flex;

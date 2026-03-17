@@ -9,8 +9,8 @@
   /* --- Colors --- */
   --color-primary:    #B87245;   /* Brand amber — buttons, accents, highlights */
   --color-primary-lt: #D4956A;   /* Lighter tint — hover states */
-  --color-bg:         #FAF8F4;   /* Page background (warm white) */
-  --color-bg-alt:     #F2EDE6;   /* Alternate section background */
+  --color-bg:         #F4EFE6;   /* Page background (warm beige) */
+  --color-bg-alt:     #EBE3D8;   /* Alternate section background deeper beige */
   --color-surface:    #FFFFFF;   /* Cards, modals */
   --color-text:       #1C1C1B;   /* Primary body text */
   --color-text-mid:   #5A5649;   /* Secondary / muted text */
