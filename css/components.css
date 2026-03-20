@@ -519,14 +519,17 @@
 
 .appliance-strip__img {
   width: 100%;
-  height: 260px;
+  height: 200px;
   object-fit: contain;
 }
 
-/* Modifier for specific images with too much baked-in whitespace */
-.appliance-strip__img--zoom {
-  transform: scale(1.35);
-  transform-origin: center;
+/* Modifier for specific items (e.g. refrigerator) to make their white container physically larger */
+.appliance-strip__item--large {
+  flex: 0 0 360px;
+}
+
+.appliance-strip__img--large {
+  height: 280px;
 }
 
 @media (min-width: 1200px) {
@@ -544,5 +547,10 @@
 
   .appliance-strip__item {
     flex: 1 1 0;
+  }
+
+  /* Make the large appliances take up slightly more horizontal space on desktop */
+  .appliance-strip__item--large {
+    flex: 1.4 1 0;
   }
 }
