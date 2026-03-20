@@ -523,6 +523,12 @@
   object-fit: contain;
 }
 
+/* Modifier for specific images with too much baked-in whitespace */
+.appliance-strip__img--zoom {
+  transform: scale(1.35);
+  transform-origin: center;
+}
+
 @media (min-width: 1200px) {
 
   /* Desktop: revert to a standard flex row filling the container */

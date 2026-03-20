@@ -232,7 +232,7 @@
 
 .property-header__logo {
   margin: 0 auto var(--sp-8);
-  height: 96px;
+  height: 150px;
   width: auto;
 }
 
@@ -382,7 +382,8 @@
    ========================================================================== */
 .expandable-description {
   position: relative;
-  max-height: 120px; /* Approx 4 lines of text */
+  max-height: 120px;
+  /* Approx 4 lines of text */
   overflow: hidden;
   transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -403,7 +404,8 @@
 
 /* Expanded state removes the max-height limit and hides the gradient */
 .expandable-description.is-expanded {
-  max-height: 2000px; /* Arbitrary large max height */
+  max-height: 2000px;
+  /* Arbitrary large max height */
 }
 
 .expandable-description.is-expanded::after {
@@ -427,7 +429,8 @@
   cursor: pointer;
   transition: all var(--ease);
   position: relative;
-  z-index: 2; /* Ensures it's clickable above the gradient */
+  z-index: 2;
+  /* Ensures it's clickable above the gradient */
 }
 
 .expand-btn:hover {
