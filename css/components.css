@@ -351,12 +351,18 @@
   border-radius: var(--radius-sm);
 }
 
-/* Floor plan grid: always 2 side-by-side columns */
+/* Floor plan grid: 1 column mobile, 3 columns desktop */
 .floorplan-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--sp-3);
+  grid-template-columns: 1fr;
+  gap: var(--sp-4);
   margin-top: var(--sp-6);
+}
+
+@media (min-width: 768px) {
+  .floorplan-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .floorplan-grid__img {
