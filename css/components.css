@@ -409,7 +409,8 @@
    Mood board / material selection panels for each room.
    ========================================================================== */
 .material-board {
-  padding: var(--sp-6) 0;
+  padding: 0;
+  margin-bottom: var(--sp-10);
   border-top: none;
 }
 
@@ -421,6 +422,7 @@
 
 /* Add dividing line after the last section (bathroom) */
 .material-board:last-of-type {
+  margin-bottom: 0;
   border-bottom: 1px solid var(--color-border);
   padding-bottom: var(--sp-12);
 }
@@ -485,7 +487,7 @@
   display: flex !important;
   flex-direction: column;
   align-items: center;
-  gap: var(--sp-6);
+  gap: 0;
 }
 
 .material-board__layout--single .material-board__img {
@@ -502,7 +504,7 @@
 }
 
 .material-board__layout--single .material-board__sublabel {
-  margin-top: 0;
+  margin-top: var(--sp-6);
 }
 
 
