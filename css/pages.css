@@ -224,10 +224,38 @@
    padding-top accounts for the fixed nav bar height.
    ========================================================================== */
 .property-header {
-  padding-top: calc(var(--nav-height) + var(--sp-12));
-  padding-bottom: var(--sp-12);
-  background: var(--color-bg);
-  text-align: center;
+  position: relative;
+  min-height: 85vh;
+  background: url('../assets/exterior-image-view2.jpeg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  text-align: left;
+  padding: calc(var(--nav-height) + 2rem) 2rem 2rem 2rem;
+  z-index: 1;
+}
+@media (min-width: 768px) {
+  .property-header {
+    padding: calc(var(--nav-height) + 4rem) 4rem 4rem 4rem;
+  }
+}
+
+.property-header__content {
+  width: 100%;
+}
+
+.property-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(244,239,230,0.15) 0%, rgba(244,239,230,0.5) 60%, var(--color-bg) 100%);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: -1;
 }
 
 .property-header__logo {
@@ -239,32 +267,34 @@
 /* "Heritage Homeworks Presents:" label */
 .property-header__presents {
   font-size: var(--fs-xs);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--color-text-mid);
   margin-bottom: var(--sp-3);
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
 }
 
 /* Property name — e.g. "Vialetto Manor" */
 .property-header__name {
   font-family: var(--font-serif);
   font-weight: 700;
-  font-size: var(--fs-3xl);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: var(--fs-xl);
+  letter-spacing: 0.02em;
   color: var(--color-primary);
   line-height: 1.1;
   margin-bottom: var(--sp-4);
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
 }
 
 /* "Estimated Completion Month Year" */
 .property-header__completion {
   font-size: var(--fs-xs);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--color-text-light);
+  color: var(--color-text-mid);
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
 }
 
 @media (min-width: 768px) {
@@ -308,137 +338,127 @@
   gap: var(--sp-3);
 }
 
-/* Each feature line, prefixed with the + bullet via ::before */
+/* Each feature line */
 .property-details__item {
-  display: flex;
-  align-items: baseline;
-  gap: var(--sp-3);
+  display: block;
   line-height: 1.5;
-}
-
-.property-details__item::before {
-  content: '+';
-  color: var(--color-primary);
-  font-size: var(--fs-lg);
-  font-weight: 600;
-  flex-shrink: 0;
-  line-height: 1;
-}
-
-/* Description paragraphs column */
-.property-details__desc {
-  margin-top: var(--sp-10);
-  max-width: 640px;
-}
-
-.property-details__desc p {
-  color: var(--color-text-mid);
-  line-height: 1.8;
-  margin-bottom: var(--sp-4);
-}
-
-@media (min-width: 1200px) {
-
-  /* Center the entire block as two flex items */
-  .property-details .container {
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    gap: var(--sp-20);
-  }
-
-  /* Make the list itself a compact 2-column grid */
-  .property-details__list {
-    display: grid;
-    grid-template-columns: max-content max-content;
-    column-gap: var(--sp-12);
-    row-gap: var(--sp-3);
-  }
-}
-
-/* Independent Description Block below Details */
-.property-details__extras {
-  max-width: 960px;
-  margin: var(--sp-16) auto 0;
-  padding: var(--sp-10) 0;
-  text-align: center;
-}
-
-.property-details__extras p {
-  color: var(--color-text-mid);
-  line-height: 1.8;
-  margin-bottom: var(--sp-4);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.property-details__extras p:last-child {
-  margin-bottom: 0;
+  list-style: none;
 }
 
 /* ==========================================================================
-   EXPANDABLE PROPERTY DESCRIPTION
+   INTRO SECTION (Description & Sidebar)
    ========================================================================== */
-.expandable-description {
-  position: relative;
-  max-height: 120px;
-  /* Approx 4 lines of text */
-  overflow: hidden;
-  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+.intro-section {
+  padding: var(--sp-12) 0;
 }
-
-/* Gradient fade at the bottom. Color matches --color-bg (beige) */
-.expandable-description::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  background: linear-gradient(to bottom, rgba(244, 239, 230, 0) 0%, var(--color-bg) 100%);
-  pointer-events: none;
-  opacity: 1;
-  transition: opacity 0.5s ease;
+.intro-section__grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-10);
 }
-
-/* Expanded state removes the max-height limit and hides the gradient */
-.expandable-description.is-expanded {
-  max-height: 2000px;
-  /* Arbitrary large max height */
-}
-
-.expandable-description.is-expanded::after {
-  opacity: 0;
-}
-
-/* "Show more" Toggle Button */
-.expand-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--sp-2);
-  margin-top: var(--sp-6);
-  padding: 8px 16px;
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
+.intro-section__desc p {
   color: var(--color-text-mid);
-  font-family: var(--font-sans);
+  line-height: 1.8;
+  margin-bottom: var(--sp-4);
+}
+.builder-bio {
+  margin-top: var(--sp-8);
+  padding: var(--sp-6);
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-md);
   font-size: var(--fs-sm);
-  font-weight: 500;
-  cursor: pointer;
-  transition: all var(--ease);
-  position: relative;
-  z-index: 2;
-  /* Ensures it's clickable above the gradient */
+  color: var(--color-text-mid);
+  line-height: 1.6;
+}
+@media (min-width: 992px) {
+  .intro-section__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--sp-16);
+    align-items: start;
+  }
 }
 
-.expand-btn:hover {
-  background: #fff;
-  border-color: var(--color-text-light);
-  color: var(--color-text);
+/* ==========================================================================
+   CONSTRUCTION PROGRESS GALLERY
+   ========================================================================== */
+.construction-progress {
+  padding: var(--sp-16) 0;
+}
+.progress-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-4);
+  margin-top: var(--sp-8);
+}
+.progress-gallery__item {
+  background: var(--color-border);
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-light);
+  font-size: var(--fs-sm);
+  border-radius: var(--radius-sm);
+}
+@media (min-width: 768px) {
+  .progress-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .progress-gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
-.expand-btn__icon {
-  transition: transform 0.3s ease;
+/* ==========================================================================
+   MATERIALS GRID
+   ========================================================================== */
+.materials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-6);
+}
+@media (min-width: 768px) {
+  .materials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-8);
+  }
+}
+.materials-grid__img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+/* ==========================================================================
+   SPECIFICATIONS
+   ========================================================================== */
+.specs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-10);
+  margin-top: var(--sp-10);
+}
+.specs-column__title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-md);
+  color: var(--color-primary);
+  margin-bottom: var(--sp-4);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--sp-2);
+}
+@media (min-width: 992px) {
+  .specs-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-8);
+  }
+}
+.specs-note--small {
+  font-size: var(--fs-xs);
+  color: var(--color-text-mid);
+  margin-top: var(--sp-6);
+  line-height: 1.5;
 }

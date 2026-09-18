@@ -178,6 +178,66 @@
   background: var(--color-primary-lt);
 }
 
+.btn-secondary {
+  display: inline-block;
+  margin-top: var(--sp-8);
+  padding: var(--sp-4) var(--sp-10);
+  background: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: all var(--ease);
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* ==========================================================================
+   ACTION BARS
+   Used below hero for stats, urgency, and CTAs.
+   ========================================================================== */
+.action-bars {
+  text-align: center;
+}
+
+.action-bar--stats {
+  background: var(--color-bg-alt);
+  padding: var(--sp-4) 0;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--color-text-mid);
+  letter-spacing: 0.05em;
+}
+
+.action-bar--urgency {
+  background: #F4E2D1;
+  padding: var(--sp-3) 0;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--color-primary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.action-bar--cta {
+  padding: var(--sp-8) 0;
+  background: var(--color-bg);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-4);
+}
+.action-bar--cta .btn-primary,
+.action-bar--cta .btn-secondary {
+  margin-top: 0;
+}
+
 
 /* ==========================================================================
    CONTACT SECTION
