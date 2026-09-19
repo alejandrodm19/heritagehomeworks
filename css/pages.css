@@ -4,7 +4,7 @@
    Styles that are unique to a specific page.
    Split into two clearly marked sections:
      1. Homepage (index.html)
-     2. Product Page (home-product.html)
+     2. Product Page (vialetto-house.html)
    ========================================================================== */
 
 
@@ -212,7 +212,7 @@
 
 
 /* ##########################################################################
-   PRODUCT PAGE — home-product.html
+   PRODUCT PAGE — vialetto-house.html
    Sections: Property Header, Property Details
    (Photo Strip, Agent Card, Annotated, Material Boards,
     Appliance Strip are all in components.css)
