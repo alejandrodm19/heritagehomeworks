@@ -103,7 +103,7 @@
         </div>
         <div class="intro-section__sidebar">
           <!-- AGENT CARD -->
-          <div class="agent-card__inner">
+          <div class="agent-card__inner" style="display: none;">
             <img src="./assets/miguel-profile-pic.jpeg" alt="Miguel Jaimes — Heritage Homeworks Agent" class="agent-card__photo" />
             <div class="agent-card__info">
               <span class="agent-card__name">Miguel Jaimes</span>
@@ -256,16 +256,19 @@
         <div class="appliance-strip__track">
           <!-- ✏️ EDIT: Each item = one construction photo -->
           <div class="appliance-strip__item appliance-strip__item--large">
-            <div style="width: 100%; height: 300px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; color: var(--color-text-mid); font-size: var(--fs-sm); border-radius: var(--radius-sm);">Const. photo placeholder</div>
+            <img src="assets/1st-front.jpeg" alt="Construction Progress - Front View 1" class="appliance-strip__img appliance-strip__img--large" loading="lazy" style="object-position: center;" />
           </div>
           <div class="appliance-strip__item appliance-strip__item--large">
-            <div style="width: 100%; height: 300px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; color: var(--color-text-mid); font-size: var(--fs-sm); border-radius: var(--radius-sm);">Const. photo placeholder</div>
+            <img src="assets/2nd-front.jpeg" alt="Construction Progress - Front View 2" class="appliance-strip__img appliance-strip__img--large" loading="lazy" style="object-position: center;" />
           </div>
           <div class="appliance-strip__item appliance-strip__item--large">
-            <div style="width: 100%; height: 300px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; color: var(--color-text-mid); font-size: var(--fs-sm); border-radius: var(--radius-sm);">Const. photo placeholder</div>
+            <img src="assets/3rd-back.jpeg" alt="Construction Progress - Back View" class="appliance-strip__img appliance-strip__img--large" loading="lazy" style="object-position: center;" />
           </div>
           <div class="appliance-strip__item appliance-strip__item--large">
-            <div style="width: 100%; height: 300px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; color: var(--color-text-mid); font-size: var(--fs-sm); border-radius: var(--radius-sm);">Const. photo placeholder</div>
+            <img src="assets/4th-inside.jpeg" alt="Construction Progress - Inside View 1" class="appliance-strip__img appliance-strip__img--large" loading="lazy" style="object-position: center;" />
+          </div>
+          <div class="appliance-strip__item appliance-strip__item--large">
+            <img src="assets/5th-inside.jpeg" alt="Construction Progress - Inside View 2" class="appliance-strip__img appliance-strip__img--large" loading="lazy" style="object-position: center;" />
           </div>
         </div>
       </div>
@@ -280,13 +283,27 @@
       <h2 class="property-details__heading" style="color: #fff; margin-bottom: var(--sp-2);">Interested in Vialetto House?</h2>
       <p style="color: var(--color-text-light); margin-bottom: var(--sp-8);">Request full floor plans, finish options, or schedule a tour.</p>
       
-      <form action="mailto:miguel@dso-consulting.com" method="post" enctype="text/plain" style="display: flex; flex-direction: column; gap: var(--sp-4);">
-        <input type="text" name="Name" placeholder="Name" required style="padding: var(--sp-3); border-radius: var(--radius-sm); border: none; font-family: var(--font-sans);" />
-        <input type="email" name="Email" placeholder="Email" required style="padding: var(--sp-3); border-radius: var(--radius-sm); border: none; font-family: var(--font-sans);" />
-        <input type="tel" name="Phone" placeholder="Phone" required style="padding: var(--sp-3); border-radius: var(--radius-sm); border: none; font-family: var(--font-sans);" />
-        <input type="text" name="BestTime" placeholder="Best time to reach you (optional)" style="padding: var(--sp-3); border-radius: var(--radius-sm); border: none; font-family: var(--font-sans);" />
+      <form id="contact-form" style="display: flex; flex-direction: column; gap: var(--sp-4);">
+        <input type="text" id="form-name" placeholder="Name" required style="padding: var(--sp-3); border-radius: var(--radius-sm); border: none; font-family: var(--font-sans);" />
+        <input type="email" id="form-email" placeholder="Email" required style="padding: var(--sp-3); border-radius: var(--radius-sm); border: none; font-family: var(--font-sans);" />
+        <input type="tel" id="form-phone" placeholder="Phone" required style="padding: var(--sp-3); border-radius: var(--radius-sm); border: none; font-family: var(--font-sans);" />
+        <input type="text" id="form-best-time" placeholder="Best time to reach you (optional)" style="padding: var(--sp-3); border-radius: var(--radius-sm); border: none; font-family: var(--font-sans);" />
         <button type="submit" class="btn-primary" style="margin-top: var(--sp-4);">Request Info</button>
       </form>
+      <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+          e.preventDefault();
+          const name = document.getElementById('form-name').value;
+          const email = document.getElementById('form-email').value;
+          const phone = document.getElementById('form-phone').value;
+          const bestTime = document.getElementById('form-best-time').value || 'Any';
+          
+          const body = "Name: " + name + "\nEmail: " + email + "\nPhone: " + phone + "\nBest time: " + bestTime;
+          const mailtoLink = "mailto:Info@heritagehomeworks.com?subject=" + encodeURIComponent("Vialetto House Inquiry") + "&body=" + encodeURIComponent(body);
+          
+          window.location.href = mailtoLink;
+        });
+      </script>
     </div>
   </section>
 

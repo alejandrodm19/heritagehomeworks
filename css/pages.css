@@ -462,3 +462,34 @@
   margin-top: var(--sp-6);
   line-height: 1.5;
 }
+
+/* ==========================================================================
+   CONSTRUCTION PROGRESS OVERRIDES
+   Keeps the horizontal carousel on desktop & perfects the photo frame.
+   ========================================================================== */
+.construction-progress .appliance-strip__img--large {
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .construction-progress .appliance-strip__scroll {
+    overflow: visible;
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 0;
+  }
+  .construction-progress .appliance-strip__track {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--sp-6);
+    width: 100%;
+  }
+  .construction-progress .appliance-strip__item,
+  .construction-progress .appliance-strip__item--large {
+    flex: none;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
